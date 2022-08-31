@@ -1,18 +1,88 @@
+:root{
+    --cafe-au-lait: rgb(219, 157, 110);
+    --charleston-green: rgba(29, 36, 41, 1);
+    --black-coffee: rgba(48, 33, 32, 1);
+    --black-coffee-2: rgb(34, 27, 30);
+    --dark-liver-horses: rgba(87, 58, 52, 1);
+    --raisin-black: rgba(25, 30, 38, 1);
+    --eerie-black: rgba(25, 26, 31, 1);
+    --charcoal: rgba(54, 60, 77, 0.438);
+    --jet: rgba(49, 46, 49, 1);
+
+}
+
+/* uncial-antiqua-regular - latin */
+@font-face {
+    font-family: 'Uncial Antiqua';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/uncial-antiqua-v20-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('./fonts/uncial-antiqua-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/uncial-antiqua-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/uncial-antiqua-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('./fonts/uncial-antiqua-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./fonts/uncial-antiqua-v20-latin-regular.s    vg#UncialAntiqua') format('svg'); /* Legacy iOS */
+}
+/* josefin-sans-regular - latin */
+@font-face {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/josefin-sans-v25-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('./fonts/josefin-sans-v25-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/josefin-sans-v25-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/josefin-sans-v25-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('./fonts/josefin-sans-v25-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./fonts/josefin-sans-v25-latin-regular.svg#JosefinSans') format('svg'); /* Legacy iOS */
+  }
+
+body{
+    margin: 0;
+    height: 100vh;
+}
 #content{
     display: flex;
     align-content: center;
     flex-direction: column;
+    background-image: url('./images/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
 }
 .option-list{
     display: flex;
-    gap: 50px
+    align-items: center;
+    justify-items: center;
+    gap: 50px;
 }
 .header-option{
+    font-family:'Josefin Sans';
     font-size: 30px;
+    color:var(--cafe-au-lait);
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.logo-name{
+    display: flex;
+    align-items: center;
+    color: var(--cafe-au-lait);
+    
+}
+.selected{
+    background-color: var(--dark-liver-horses);
+}
+.page-name{
+    font-family:'Uncial Antiqua';
+    margin-top: 15px;
+    border-bottom: 9px solid rgba(255,136,55,255);
+    font-size: 40px;
 }
 #logo{
-    width: 70px;
-    height: 50px;
+    width: 100px;
+    height: 80px;
 }
 .company-name{
     font-size: 50px;
@@ -21,4 +91,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
+    background-color: var(--charcoal);
+    backdrop-filter: blur(10px);
+    padding-top: 10px;
 }
