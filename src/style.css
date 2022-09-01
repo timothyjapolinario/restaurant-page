@@ -1,9 +1,11 @@
 :root{
     --cafe-au-lait: rgb(219, 157, 110);
+    --cafe-au-lait-darker: rgb(204, 116, 48);
     --charleston-green: rgba(29, 36, 41, 1);
     --black-coffee: rgba(48, 33, 32, 1);
     --black-coffee-2: rgb(34, 27, 30);
     --dark-liver-horses: rgba(87, 58, 52, 1);
+    --dark-liver-horses-semi-transparent: rgba(87, 58, 52, 0.637);
     --raisin-black: rgba(25, 30, 38, 1);
     --eerie-black: rgba(25, 26, 31, 1);
     --charcoal: rgba(54, 60, 77, 0.438);
@@ -49,7 +51,8 @@ body{
     background-image: url('./images/background.png');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
+    background-attachment: fixed;
+    min-height: 100%;
 }
 .option-list{
     display: flex;
@@ -95,4 +98,41 @@ body{
     background-color: var(--charcoal);
     backdrop-filter: blur(10px);
     padding-top: 10px;
+    min-height: 22vh;
+}
+
+.main-content{
+    background-color: var(--dark-liver-horses-semi-transparent);
+    min-width: 90vw;
+    min-height: 76.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.main-content * {
+    height: 100%;
+}
+.about-content{
+    display: flex;
+    gap:15px;
+}
+.about-content>div{
+    height: min-content;
+}
+
+.restaurant-description{
+    max-width: 300px;
+}
+.restaurant-description p{
+    font-family: 'Josefin Sans';
+    font-size: 20px;
+    color:var(--cafe-au-lait-darker);
+    padding-top: 10px;
+}
+
+#restaurant-image{
+    height: 400px;
+    width: 650px;
 }

@@ -3,10 +3,15 @@ import Logo from '../images/logo.png'
 
 
 const addComponent = (contentBody)=>{
+    //Parent Header
     const header = document.createElement('div')
     header.classList.add(('header'))
+
+    //Contents
     addPageLogo(header)
     addMenuOptions(header)
+
+    //Adding header to the wrapper
     contentBody.appendChild(header)
 
 }
@@ -32,7 +37,6 @@ const addMenuOptions = (header)=>{
     const options = document.createElement('div')
     options.classList.add('option-list')
 
-    options.chi
     const menu = document.createElement('div')
     menu.classList.add('header-option')
     menu.innerText = "Menu"
@@ -43,6 +47,7 @@ const addMenuOptions = (header)=>{
 
     const about = document.createElement('div')
     about.classList.add('header-option')
+    about.classList.add('selected')
     about.innerText = "About"
     about.addEventListener('click',()=>{
         clearSelectedClass(options)
@@ -57,9 +62,6 @@ const addMenuOptions = (header)=>{
         addSelectedClass(contact)
     })
     
-
-
-
     options.appendChild(menu)
     options.appendChild(about)
     options.appendChild(contact)
