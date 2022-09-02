@@ -1,18 +1,14 @@
 import Logo from '../images/logo.png'
-
-
-
 const addComponent = (contentBody)=>{
     //Parent Header
     const header = document.createElement('div')
     header.classList.add(('header'))
-
     //Contents
     addPageLogo(header)
     addMenuOptions(header)
-
     //Adding header to the wrapper
     contentBody.appendChild(header)
+
 
 }
 

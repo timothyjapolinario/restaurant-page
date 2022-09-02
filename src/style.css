@@ -104,16 +104,14 @@ body{
 .main-content{
     background-color: var(--dark-liver-horses-semi-transparent);
     min-width: 90vw;
-    min-height: 76.5vh;
+    min-height: calc(77vh - 20px);
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
-.main-content * {
-    height: 100%;
-}
+
 .about-content{
     display: flex;
     gap:15px;
@@ -135,4 +133,32 @@ body{
 #restaurant-image{
     height: 400px;
     width: 650px;
+}
+.menu-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+}
+.menu-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 120px;
+    margin: 50px;
+    background-color: var(--cafe-au-lait-darker);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.item-information{
+    
+    right: 10px;
+    width: 100%;
+    left: 100%;
+
+    padding-right: 10px;
+    padding-left: 10px;
+    color:var(--jet);
+    font-family: 'Uncial Antiqua';
+    font-size: 20px;
 }
