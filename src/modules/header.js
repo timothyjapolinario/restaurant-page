@@ -1,4 +1,5 @@
 import Logo from '../images/logo.png'
+import * as PubSub from './pubsub.js'
 const addComponent = (contentBody)=>{
     //Parent Header
     const header = document.createElement('div')
@@ -39,6 +40,7 @@ const addMenuOptions = (header)=>{
     menu.addEventListener('click',()=>{
         clearSelectedClass(options)
         addSelectedClass(menu)
+        PubSub.emit('headerOptionClicked', "menu")
     })
 
     const about = document.createElement('div')
@@ -48,6 +50,7 @@ const addMenuOptions = (header)=>{
     about.addEventListener('click',()=>{
         clearSelectedClass(options)
         addSelectedClass(about)
+        PubSub.emit('headerOptionClicked', "about")
     })
 
     const contact = document.createElement('div')
@@ -63,6 +66,7 @@ const addMenuOptions = (header)=>{
     options.appendChild(contact)
     header.appendChild(options)
 }
+
 
 const addSelectedClass = (option) =>{
     option.classList.add('selected')

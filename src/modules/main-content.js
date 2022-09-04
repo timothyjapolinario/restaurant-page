@@ -1,18 +1,24 @@
 import restaurantImagePath from '../images/third-round-knockout.png'
 import {getImagesPath} from './image-path-loader.js'
 
-
-const addComponent = (contentBody) =>{
-    
-    const mainContent = document.createElement('div')
-    mainContent.classList.add('main-content')
-
-
-    //loadAbout(mainContent)
-    loadMenu(mainContent)
+const mainContent = document.createElement('div')
+mainContent.classList.add('main-content')
+const addComponent = (contentBody, contentToLoad) =>{
+    removeContent()
+    if(contentToLoad == "about"){
+        loadAbout(mainContent)
+    }else if(contentToLoad = "menu"){
+        loadMenu(mainContent)
+    }
     contentBody.appendChild(mainContent)
 }
 
+const removeContent = ()=>{
+    while(mainContent.firstChild){
+        mainContent.firstChild.remove()
+    }
+}
+ 
 const loadAbout = (mainContent) =>{
     const aboutContent = document.createElement('div')
     aboutContent.classList.add('about-content')
@@ -52,6 +58,7 @@ const loadMenu = (mainContent) => {
 }
 
 const generateMenuItems =()=>{
+
     const menuItems =[]
     const imagePaths = getImagesPath()
     let newId = 0
