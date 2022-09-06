@@ -162,3 +162,16 @@ body{
     font-family: 'Uncial Antiqua';
     font-size: 20px;
 }
+.item-information > :last-child{
+    display: flex;
+}
+.mora-image{
+    height: 30px;
+    width: 30px;
+}
+
+.contact-content{
+    color:var(--jet);
+    font-family: 'Uncial Antiqua';
+    font-size: 20px;
+}

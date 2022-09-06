@@ -1,4 +1,5 @@
 import restaurantImagePath from '../images/third-round-knockout.png'
+import moraImagePath from '../images/Item_Mora.png'
 import {getImagesPath} from './image-path-loader.js'
 
 const mainContent = document.createElement('div')
@@ -7,8 +8,10 @@ const addComponent = (contentBody, contentToLoad) =>{
     removeContent()
     if(contentToLoad == "about"){
         loadAbout(mainContent)
-    }else if(contentToLoad = "menu"){
+    }else if(contentToLoad == "menu"){
         loadMenu(mainContent)
+    }else if(contentToLoad == "contact"){
+        loadContact(mainContent)
     }
     contentBody.appendChild(mainContent)
 }
@@ -57,6 +60,15 @@ const loadMenu = (mainContent) => {
     
 }
 
+const loadContact = (mainContent) => {
+    const aboutContent = document.createElement('div')
+    aboutContent.classList.add('contact-content')
+    aboutContent.innerText = "+1029384756"
+    
+    mainContent.appendChild(aboutContent)
+}
+
+
 const generateMenuItems =()=>{
 
     const menuItems =[]
@@ -84,21 +96,34 @@ const fixItemName= (itemName) =>{
     return newItemName
 }
 
-
 const createMenuItem = (itemObj, content) =>{
     let menuItemElement = document.createElement('div')
     menuItemElement.classList.add('menu-item')
+
     let image = new Image()
+    let moraImage = new Image()
     image.src = itemObj.imagePath
     image.classList.add('menu-item-image')
+    moraImage.src = moraImagePath
+    moraImage.classList.add('mora-image')
+
     
     let itemInformation = document.createElement('div')
     itemInformation.classList.add('item-information')
+
     let itemNameElement = document.createElement('p')
     itemNameElement.innerText = itemObj.itemName
     itemInformation.appendChild(itemNameElement)
-    let itemPriceElement = document.createElement('p')
-    itemPriceElement.innerText= itemObj.itemPrice
+
+    let itemPriceElement = document.createElement('div')
+    let itemPrice = document.createElement('span')
+    itemPrice.innerText = itemObj.itemPrice
+    itemPriceElement.appendChild(moraImage)
+    console.log('appending mora')
+    itemPriceElement.appendChild(itemPrice)
+
+
+
     itemInformation.appendChild(itemPriceElement)
 
     menuItemElement.appendChild(image)
@@ -106,6 +131,12 @@ const createMenuItem = (itemObj, content) =>{
 
     content.appendChild(menuItemElement)
 }
+
+
+
+
+
+
 export{
     addComponent
 }

@@ -59,6 +59,7 @@ const addMenuOptions = (header)=>{
     contact.addEventListener('click',()=>{
         clearSelectedClass(options)
         addSelectedClass(contact)
+        PubSub.emit('headerOptionClicked', "contact")
     })
     
     options.appendChild(menu)
